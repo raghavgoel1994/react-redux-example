@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-class FavList extends Component {
+class FavListComponent extends Component {
 
     createFoodItems() {
 
@@ -24,6 +24,7 @@ class FavList extends Component {
     }
 
     render() {
+        console.log("fav List")
         return (
             <ul>
                 {this.createFoodItems()}
@@ -36,4 +37,8 @@ function mapStateToProps(state) {
         foodreducers: state.foodreducers
     }
 }
-export default connect(mapStateToProps)(FavList);
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(Object.assign({},{}), dispatch)
+}
+export  default connect(mapStateToProps,mapDispatchToProps)(FavListComponent);

@@ -5,11 +5,13 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware  } from 'redux';
 import allReducers from './reducers/index.js'
+import thunk from 'redux-thunk';
 
 const store = createStore(
-        allReducers
+        allReducers,
+        applyMiddleware(thunk)
     );
 
 ReactDOM.render(
