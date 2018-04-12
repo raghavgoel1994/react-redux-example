@@ -11,7 +11,7 @@ class App extends Component {
       <Router>
          <div>
             <Route exact path="/" component={SearchPanelComponent} />
-            <Route exact path="/favorites" component={FavListComponent} />
+            <Route exact path="/home/favorites" component={FavListComponent} />
             <Route exact path="/:id" component={DetailComponent} />
           </div>
       </Router>

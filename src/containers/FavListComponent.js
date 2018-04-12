@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
+import Header from './Header'; 
 class FavListComponent extends Component {
 
     createFoodItems() {
@@ -26,9 +26,12 @@ class FavListComponent extends Component {
     render() {
         console.log("fav List")
         return (
-            <ul>
-                {this.createFoodItems()}
-            </ul>
+            <div>
+                <Header></Header>
+                <ul>
+                    {this.createFoodItems()}
+                </ul>
+            </div>
         )
     }
 }
@@ -38,7 +41,7 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispatchToProps(dispatch) {
+/* function mapDispatchToProps(dispatch) {
     return bindActionCreators(Object.assign({},{}), dispatch)
-}
-export  default connect(mapStateToProps,mapDispatchToProps)(FavListComponent);
+} */
+export  default connect(mapStateToProps)(FavListComponent);

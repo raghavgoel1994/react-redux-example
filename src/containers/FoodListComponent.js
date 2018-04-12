@@ -20,7 +20,7 @@ class FoodListComponent extends Component {
                             <h5 className="card-title" style={{ margin: '0' }}>{user.ndbno}</h5>
                             </div>
                             <div className="col-sm-3">
-                            <img src="/star.png" style={{height:'28px',width:'28px'}} onClick={this.props.addUserToFav.bind(this)} />
+                            <img src="/star.png" style={{height:'28px',width:'28px'}} onClick={this.props.addUserToFav.bind(this,user.ndbno)} />
                             </div>
                         </div>
                         <div className="card-body text-center">
